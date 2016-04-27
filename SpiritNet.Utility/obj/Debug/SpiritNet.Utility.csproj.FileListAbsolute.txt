@@ -1,0 +1,12 @@
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\bin\Debug\SpiritNet.Utility.dll
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\bin\Debug\SpiritNet.Utility.pdb
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\bin\Debug\FluentNHibernate.dll
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\bin\Debug\Iesi.Collections.dll
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\bin\Debug\NHibernate.dll
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\bin\Debug\FluentNHibernate.pdb
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\bin\Debug\FluentNHibernate.xml
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\bin\Debug\Iesi.Collections.xml
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\bin\Debug\NHibernate.xml
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\obj\Debug\SpiritNet.Utility.csprojResolveAssemblyReference.cache
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\obj\Debug\SpiritNet.Utility.dll
+E:\Projects\C#\SpiritNet\SpiritNet.Utility\obj\Debug\SpiritNet.Utility.pdb

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpiritNet.Core
+namespace SpiritNet.Core.FactoryModule
 {
-    public class Class1
+    public class ControllerModule :Autofac.Module
     {
     }
 }

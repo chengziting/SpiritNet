@@ -2,8 +2,8 @@
 using NHibernate;
 using NHibernate.Cache;
 using NHibernate.Cfg;
-using NHibernate.Cfg.ConfigurationSchema;
 using NHibernate.Tool.hbm2ddl;
+using SpiritNet.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -13,7 +13,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpiritNet.Utility
+namespace SpiritNet.Core.Nhibernate
 {
     /// <summary>
     /// Handles creation and management of sessions and transactions.  It is a singleton because 
@@ -35,11 +35,6 @@ namespace SpiritNet.Utility
         /// </summary>
         public static NHibernateSessionManager CurrentInstance { get; set; }
 
-
-        /// <summary>
-        /// Nhibernate加密所使用的载体
-        /// </summary>
-        public static IEncryptor encryptor { get; private set; }
 
         /// <summary>
         /// This is a thread-safe, lazy singleton.  See http://www.yoda.arachsys.com/csharp/singleton.html
@@ -83,11 +78,6 @@ namespace SpiritNet.Utility
         /// </summary>
         private void InitSessionFactory()
         {
-
-            Logger logger = LogManager.GetCurrentClassLogger();
-            logger.Info("Execute InitSessionFactory. ");
-
-            EncryptUtility.SetEncryptionConfig();
             NHibernate.Cfg.Configuration sourceConfig
                 = new NHibernate.Cfg.Configuration();
 
@@ -111,14 +101,12 @@ namespace SpiritNet.Utility
                         assembly =>
                         {
                             m.HbmMappings.AddFromAssembly(assembly);
-                            logger.Info("Load Hbm file: {0} ", assembly.FullName);
                         },
                          "*.xml.dll");
                     CommonFunctions.LoadAssembly(
                        assembly =>
                        {
                            m.FluentMappings.AddFromAssembly(assembly);
-                           logger.Info("Load FluentMappings file: {0} ", assembly.FullName);
 
                        },
                         "*.Model.dll");
@@ -127,8 +115,9 @@ namespace SpiritNet.Utility
 
                 }
                 )
-                .Mappings(m => m.FluentMappings.Add<AuditLogMasterMap>())
-                .Mappings(m => m.FluentMappings.Add<AuditLogDetailMap>());
+               // .Mappings(m => m.FluentMappings.Add<AuditLogMasterMap>())
+               // .Mappings(m => m.FluentMappings.Add<AuditLogDetailMap>())
+                ;
 
             this.sessionFactory = fluentlyConfig.BuildSessionFactory();
         }
